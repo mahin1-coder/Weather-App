@@ -7,19 +7,18 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="container">
-      <header class="header">
-        <div>
-          <p class="eyebrow">Weather Now</p>
-          <h1>Fast, clean weather updates</h1>
-          <p class="subhead">
-            Search any city to see current conditions and a 7‑day outlook.
-          </p>
+    <main class="phone">
+      <header class="hero">
+        <p class="eyebrow">Weather Now</p>
+        <h1 id="location">—</h1>
+        <p class="hero-time" id="local-time">—</p>
+        <div class="hero-temp">
+          <span id="temp">—</span>
+          <small id="summary">—</small>
         </div>
-        <div class="badge">Powered by Open‑Meteo</div>
       </header>
 
-      <section class="card search">
+      <section class="glass search">
         <form id="search-form">
           <div class="input-group">
             <label for="city">City</label>
@@ -34,33 +33,26 @@
         <p id="status" class="status"></p>
       </section>
 
-      <section class="card current" id="current-card" hidden>
-        <div>
-          <h2 id="location">—</h2>
-          <p class="muted" id="local-time">—</p>
+      <section class="glass stats" id="current-card" hidden>
+        <div class="stat">
+          <span>Feels like</span>
+          <strong id="feels">—</strong>
         </div>
-        <div class="current-grid">
-          <div>
-            <p class="temp" id="temp">—</p>
-            <p class="muted" id="summary">—</p>
-          </div>
-          <div class="stat">
-            <span>Feels like</span>
-            <strong id="feels">—</strong>
-          </div>
-          <div class="stat">
-            <span>Wind</span>
-            <strong id="wind">—</strong>
-          </div>
-          <div class="stat">
-            <span>Humidity</span>
-            <strong id="humidity">—</strong>
-          </div>
+        <div class="stat">
+          <span>Wind</span>
+          <strong id="wind">—</strong>
+        </div>
+        <div class="stat">
+          <span>Humidity</span>
+          <strong id="humidity">—</strong>
         </div>
       </section>
 
-      <section class="card forecast" id="forecast-card" hidden>
-        <h3>7‑Day forecast</h3>
+      <section class="glass forecast" id="forecast-card" hidden>
+        <div class="section-title">
+          <h3>7‑Day forecast</h3>
+          <span class="badge">Powered by Open‑Meteo</span>
+        </div>
         <div class="forecast-grid" id="forecast-grid"></div>
       </section>
     </main>
