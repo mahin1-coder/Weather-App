@@ -17,6 +17,14 @@ python serve.py
 
 Then open `http://localhost:8008` in your browser.
 
+## Live demo (GitHub Pages)
+
+After the workflow runs, your site will be available at:
+
+```
+https://mahin1-coder.github.io/Weather-App/
+```
+
 ## Notes
 
 - The app uses the Open‑Meteo public API.
