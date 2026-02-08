@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Now</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <div>
+          <p class="eyebrow">Weather Now</p>
+          <h1>Fast, clean weather updates</h1>
+          <p class="subhead">
+            Search any city to see current conditions and a 7‑day outlook.
+          </p>
+        </div>
+        <div class="badge">Powered by Open‑Meteo</div>
+      </header>
+
+      <section class="card search">
+        <form id="search-form">
+          <div class="input-group">
+            <label for="city">City</label>
+            <input id="city" name="city" type="text" placeholder="e.g. Minneapolis" required />
+          </div>
+          <div class="input-group">
+            <label for="country">Country (optional)</label>
+            <input id="country" name="country" type="text" placeholder="US" />
+          </div>
+          <button class="button" type="submit">Get forecast</button>
+        </form>
+        <p id="status" class="status"></p>
+      </section>
+
+      <section class="card current" id="current-card" hidden>
+        <div>
+          <h2 id="location">—</h2>
+          <p class="muted" id="local-time">—</p>
+        </div>
+        <div class="current-grid">
+          <div>
+            <p class="temp" id="temp">—</p>
+            <p class="muted" id="summary">—</p>
+          </div>
+          <div class="stat">
+            <span>Feels like</span>
+            <strong id="feels">—</strong>
+          </div>
+          <div class="stat">
+            <span>Wind</span>
+            <strong id="wind">—</strong>
+          </div>
+          <div class="stat">
+            <span>Humidity</span>
+            <strong id="humidity">—</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="card forecast" id="forecast-card" hidden>
+        <h3>7‑Day forecast</h3>
+        <div class="forecast-grid" id="forecast-grid"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
