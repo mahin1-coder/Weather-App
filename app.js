@@ -101,9 +101,9 @@ function renderCurrent(location, forecast) {
 
   locationEl.textContent = `${location.name}, ${location.country}`;
   localTimeEl.textContent = `Local time: ${current.time}`;
-  tempEl.textContent = `${Math.round(current.temperature_2m)}°C`;
+  tempEl.textContent = formatTemp(current.temperature_2m);
   summaryEl.textContent = weatherLabel;
-  feelsEl.textContent = `${Math.round(current.apparent_temperature)}°C`;
+  feelsEl.textContent = formatTemp(current.apparent_temperature);
   windEl.textContent = `${Math.round(current.wind_speed_10m)} km/h`;
   humidityEl.textContent = `${Math.round(current.relative_humidity_2m)}%`;
 
@@ -119,13 +119,14 @@ function renderForecast(forecast) {
     const card = document.createElement("div");
     card.className = "forecast-card";
     const label = weatherCodes[weather_code[index]] || "Unknown";
+    const maxLabel = formatTemp(temperature_2m_max[index]);
+    const minLabel = formatTemp(temperature_2m_min[index]);
 
     card.innerHTML = `
       <h4>${formatDate(date)}</h4>
       <p>${label}</p>
-      <p><strong>${Math.round(temperature_2m_max[index])}°C</strong> / ${Math.round(
-      temperature_2m_min[index]
-    )}°C</p>
+      <p><strong>High:</strong> ${maxLabel}</p>
+      <p><strong>Low:</strong> ${minLabel}</p>
     `;
     forecastGrid.appendChild(card);
   });
@@ -140,4 +141,10 @@ function formatDate(dateStr) {
     month: "short",
     day: "numeric"
   });
+}
+
+function formatTemp(valueC) {
+  const roundedC = Math.round(valueC);
+  const roundedF = Math.round((valueC * 9) / 5 + 32);
+  return `${roundedC}°C / ${roundedF}°F`;
 }
