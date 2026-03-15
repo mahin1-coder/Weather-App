@@ -1,31 +1,36 @@
-# Weather Now
+# Weather Now (Month-1 Foundation)
 
-A clean, responsive weather app that uses the Open‑Meteo API for geocoding and forecasts.
-
-## Features
-
-- City + country search
-- Current conditions with feels‑like, humidity, wind
-- 7‑day forecast
-- No API key needed
+Next.js + TypeScript weather app with a server-side API proxy, hourly cache revalidation, stronger error handling, and accessibility baseline improvements.
 
 ## Run locally
 
+1. Install dependencies:
+
 ```bash
-python serve.py
+npm install
 ```
 
-Then open `http://localhost:8008` in your browser.
+2. Start development server:
 
-## Live demo (GitHub Pages)
-
-After the workflow runs, your site will be available at:
-
-```
-https://mahin1-coder.github.io/Weather-App/
+```bash
+npm run dev
 ```
 
-## Notes
+3. Open `http://localhost:3000`
 
-- The app uses the Open‑Meteo public API.
-- Temperatures are shown in Celsius by default.
+## Environment variables
+
+Copy `.env.example` to `.env.local` and adjust values as needed.
+
+## What is included
+
+- Next.js App Router + strict TypeScript
+- Server route handler at `/api/weather?q=<city>`
+- Timeout-safe fetch utility with explicit HTTP error checks
+- Local-date parsing for `YYYY-MM-DD` to avoid UTC day-shift bugs
+- Accessible status updates using `role="status"` and visible `:focus-visible`
+- CI workflows for typecheck, lint, build, and Lighthouse CI
+
+## Deployment
+
+Deploy on a Next.js-capable host (for example, Vercel). Ensure API provider commercial terms are valid before monetization.
