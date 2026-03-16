@@ -2,6 +2,8 @@
 
 A modern weather dashboard built with Next.js and TypeScript.
 
+![Weather Now Screenshot](docs/screenshot.png)
+
 It lets users search any city and view:
 - Current weather
 - 24-hour forecast
@@ -14,6 +16,10 @@ The project is built to be fast, clean, and production-ready.
 ## Live demo
 
 https://weather-app-mahin.vercel.app
+
+## Author
+
+**Mahin** – [Portfolio](https://github.com/mahin1-coder/About-me)
 
 ## Why this project is strong for interviews
 
