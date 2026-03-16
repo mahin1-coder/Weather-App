@@ -19,7 +19,7 @@ https://weather-app-mahin.vercel.app
 
 ## Author
 
-**Mahin** – [Portfolio](https://github.com/mahin1-coder/About-me)
+**Mahin** – [Portfolio](https://about-me-lake-six.vercel.app)
 
 ## Why this project is strong for interviews
 
